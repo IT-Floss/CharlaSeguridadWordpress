@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Seguridad en Wordpress - IT Floss</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Seguridad en Wordpress</h2>
+					<p>
+						<small>Cómo mejorar la seguridad de nuestros sitios en WordPress y los de nuestros clientes.</small>
+						<br />
+					</p>
+					<img data-src="img/wpRosario.jpg" width="40%" style="border: none;"  />
+				</section>
+				<section>
+					<div style="width:50%;float:left;">
+						<h3>Ezequiel Cardinali</h3>
+						<p>
+							<img data-src="img/eze.jpg" style="border: none;" />
+							<br />
+							SysAdmin
+							<br />
+							<small><a target="_blank" href="https://twitter.com/ezq">twitter.com/ezq</a></small>
+						</p>
+					</div>
+					<div style="width:50%;float:right;">
+						<h3>Julián G. Butti</h3>
+						<p>
+							<img data-src="img/juli.jpg" style="border: none;" />
+							<br />
+							Syloper
+							<br />
+							<small><a target="_blank" href="https://www.syloper.com/">syloper.com</a></small>
+						</p>
+					</div>
+				</section>
+				<section>
+					<h2>Utilizar un buen Password</h2>
+					<small><a target="_blank" href="https://howsecureismypassword.net/">Ejemplo: https://howsecureismypassword.net/</a></small>
+					<img data-src="img/howsecure.png" style="border: none;" />
+				</section>
+
+				<section>
+					<h2>usuario administrador</h2>
+					<ul>
+						<li>No utilizar "admin" como nombre de usuario !</li>
+						<li>No compartir usuarios, crear usuarios administradores diferentes.</li>
+						<li>Utilizar 2FA (Two Factor Authentication)</li>
+						<li>Evitar utilizar misma combinación de usuario y clave en diferentes sitios</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Limitar cantidad de intentos de login fallidos</h2>
+					<small><a target="_blank" href="https://wordpress.org/plugins/login-lockdown/">Ejemplo: https://wordpress.org/plugins/login-lockdown/</a></small>
+					<br />
+					Dificulta a los atacantes por fuerza bruta
+				</section>
+
+				<section>
+					<h2>plugins al mínimo</h2>
+					<br />
+					<p>
+						Reducir la cantidad de plugins instalados y utilizados al mínimo posible.
+						<br />
+						Cada plugin es una amenaza potencial.
+					</p>
+					<br />
+				</section>
+
+				<section>
+					<h2>Escanear automáticamente</h2>
+					<br />
+					Plugins de Ejemplo:
+					<br />
+					<ul>
+						<li>Wordfence</li>
+						<li>Sucuri</li>
+					</ul>
+					<p>
+						<small>Monitorear reputación  (https://sitecheck.sucuri.net/)</small>
+					</p>
+				</section>
+
+				<section>
+					<h1>backup !</h1>
+					<img data-src="img/backup.jpg" style="border: none;width:30%;" />
+					<br />
+					<p>
+						<small>https://wordpress.org/plugins/wp-google-drive/</small><br />
+						<small>https://ithemes.com/purchase/backupbuddy/ </small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Actualizaciones</h2>
+					<p>
+						<small>Por lo general, además de corregir errores, se resuelven vulnerabilidades y mejora el rendimiento.</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Utilizar plugins de origen conocido u oficiales.</h2>
+					
+					<br />
+					<small>Ejemplo: https://ayudawp.com/plugin-seo-falso-infecta-miles-de-sitios-wordpress/</small>
+				</section>
+
+				<section>
+					<h2>Base de datos</h2>
+					
+					<br />
+					<ul>
+						<li>Ser cuidadosos con usuario y clave de la base de datos</li>
+						<li>No utilizar prefijo wp_ por defecto</li>
+						<li>Hacer backups independientes</li>
+						<li>Hacer backups de posteos en otro formato como xml</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Permisos</h2>
+					
+					<img data-src="img/permisos.png" style="border: none;" /><br />
+					<img data-src="img/permisos2.png" style="border: none;" />
+				</section>
+
+				<section>
+					<h2>Permisos</h2>
+					
+					<img data-src="img/permisos3.png" style="border: none;" />
+				</section>
+
+				<section>
+					<h2>Permisos</h2>
+					
+					<br />
+					<ul>
+						<li>Siempre evitar 777 (rwx rwx rwx)</li>
+						<li>Carpetas por defecto 755 (rwx r-x r-x)</li>
+						<li>Permisos de Archivos 644 (rw- r-- r--)</li>
+						<li>Archivos editables desde escritorio 666 (rw- rw- rw-)</li>
+					</ul>
+					<br /><br />
+					<small>Referencia: https://codex.wordpress.org/es:Modificar_los_permisos_de_ficheros</small>
+				</section>
+				
+				
+
+				<section>
+					<h1>Gracias !</h1>
+					<br />
+					<small> </small>
+					
+				</section>
+
+			</div>
+		</div>
+
+		<div id="Syloper" style="background: url(img/itf.png); position: absolute;bottom: 80px;left: 80px;width: 80px;height: 80px;"></div>
+		<div id="ITFloss" style="background: url(img/syloper.png); position: absolute;bottom: 80px;right: 80px;width: 80px;height: 80px;"></div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
