@@ -181,10 +181,18 @@
 					<br />
 					<small>directorio uploads (wp-content/uploads)</small>
 					<pre><code>
-	&lt;Files *.php>
-	    deny from all
-	&lt;/Files>
+        # No permitir ejecutar archivos php
+        &lt;Files *.php>
+                deny from all
+        &lt;/Files>
 					</code></pre>
+					<small>Archivo wp-config.php</small>
+					<pre><code>
+	&lt;Files wp-config.php>
+                order allow,deny
+                deny from all
+        &lt;/files>
+                                        </code></pre>
 				</section>
 
 				<section>
